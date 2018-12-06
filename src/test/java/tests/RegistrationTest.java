@@ -14,4 +14,12 @@ public class RegistrationTest extends BrowserConfig {
                 .submitDataRegistration()
                 .successfullyRegistered();
     }
+
+    @Test
+    public void invalidEmailRegistration(){
+        new Home()
+                .openSignIn()
+                .createAccountInvalidEmail()
+                .emailRegistrationAlert();
+    }
 }
