@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 import static config.WebDriverBrowserSetup.quit;
-import static tests.ScreenShot.captureScreenShot;
+import static tools.ScreenShot.captureScreenShot;
 import static config.WebDriverBrowserSetup.getInstance;
 
 public class BrowserConfig {

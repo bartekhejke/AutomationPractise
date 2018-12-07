@@ -19,7 +19,7 @@ public class LogInProfile extends Base {
     public void successfullyRegistered(){
         String logOutButtonText = logOutButton.getText();
 
-        Assert.assertThat(logOutButtonText, IsEqual.equalTo("Sign out"));
+        Assert.assertThat(logOutButtonText, IsEqual.equalTo("Sign out")); // hmcrest biblioteka (IsEqual)
     }
 
 }

@@ -1,12 +1,17 @@
 package pages;
 
+import org.hamcrest.core.IsEqual;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import ru.yandex.qatools.allure.annotations.Step;
-import tests.DataFaker;
+import tools.DataFaker;
 
-import static tests.ScreenShot.captureScreenShot;
+import java.util.ArrayList;
+import java.util.List;
+
+import static tools.ScreenShot.captureScreenShot;
 
 public class SignUp extends Base {
 
@@ -58,6 +63,9 @@ public class SignUp extends Base {
     @FindBy (id ="submitAccount")
     WebElement submitRegistrationButton;
 
+    @FindBy(css = "#center_column > .alert li")
+    private List<WebElement> alertMessagesRegistrationElement;
+
     private void fillingRegistrationSpace(){
         maleTitleRadio.click();
         firstNameSpace.sendKeys(datafaker.getFakeFirstName());
@@ -75,12 +83,34 @@ public class SignUp extends Base {
     }
 
     @Step
-    public LogInProfile submitDataRegistration(){
+    public LogInProfile submitValidDataRegistration(){
         fillingRegistrationSpace();
         captureScreenShot();
         submitRegistrationButton.click();
         return new LogInProfile();
     }
+
+    @Step
+    public SignUp submitInvalidDataRegistration(){
+        submitRegistrationButton.click();
+        captureScreenShot();
+        return this;
+    }
+
+    public void showAlertMessagesRegistration(){
+        Assert.assertThat(getAlertMessagesRegistration(), IsEqual.equalTo(getAlertMessagesRegistration()));
+    }
+
+    private List<String> getAlertMessagesRegistration(){
+        List<String> alertMessagesRegistration = new ArrayList<String>();
+
+        for(WebElement messages : alertMessagesRegistrationElement){
+            alertMessagesRegistration.add(messages.getText());
+        }
+        return alertMessagesRegistration;
+    }
+
+
 
 
 }

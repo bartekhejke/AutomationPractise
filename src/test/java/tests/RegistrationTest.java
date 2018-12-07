@@ -11,7 +11,7 @@ public class RegistrationTest extends BrowserConfig {
         new Home()
                 .openSignIn()
                 .createAccount()
-                .submitDataRegistration()
+                .submitValidDataRegistration()
                 .successfullyRegistered();
     }
 
@@ -20,6 +20,15 @@ public class RegistrationTest extends BrowserConfig {
         new Home()
                 .openSignIn()
                 .createAccountInvalidEmail()
-                .emailRegistrationAlert();
+                .invalidEmailRegistration();
+    }
+
+    @Test
+    public void failedRegistration(){
+        new Home()
+                .openSignIn()
+                .createAccount()
+                .submitInvalidDataRegistration()
+                .showAlertMessagesRegistration();
     }
 }

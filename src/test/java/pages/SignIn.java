@@ -1,14 +1,13 @@
 package pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
-import tests.DataFaker;
+import tools.DataFaker;
 import static config.WebDriverBrowserSetup.getInstance;
 
-import static tests.ScreenShot.captureScreenShot;
+import static tools.ScreenShot.captureScreenShot;
 
 public class SignIn extends Base {
 
@@ -41,8 +40,12 @@ public class SignIn extends Base {
     }
 
     @Step
-    public void emailRegistrationAlert(){
-
+    public void invalidEmailRegistration() {
+        Assert.assertTrue(getInstance().getPageSource().contains("Please enter your email address to create an account."));
     }
+
+
+
+
 
 }
