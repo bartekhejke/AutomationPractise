@@ -12,7 +12,7 @@ public class RegistrationTest extends BrowserConfig {
                 .openSignIn()
                 .createAccount()
                 .submitValidDataRegistration()
-                .successfullyRegistered();
+                .successfullyRegisteredLogIn();
     }
 
     @Test

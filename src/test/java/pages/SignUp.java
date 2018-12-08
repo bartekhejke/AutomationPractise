@@ -15,53 +15,53 @@ import static tools.ScreenShot.captureScreenShot;
 
 public class SignUp extends Base {
 
-    DataFaker datafaker = new DataFaker();
+    private DataFaker datafaker = new DataFaker();
 
     public SignUp(){
         super();
     }
 
     @FindBy (id ="uniform-id_gender1")
-    WebElement maleTitleRadio;
+    private WebElement maleTitleRadio;
 
     @FindBy (id ="customer_firstname")
-    WebElement firstNameSpace;
+    private WebElement firstNameSpace;
 
     @FindBy (id ="customer_lastname")
-    WebElement lastNameSpace;
+    private WebElement lastNameSpace;
 
     @FindBy (id ="passwd")
-    WebElement passwordSpace;
+    private WebElement passwordSpace;
 
     @FindBy (id ="days")
-    WebElement daysSelector;
+    private WebElement daysSelector;
 
     @FindBy (id ="months")
-    WebElement monthsSelector;
+    private WebElement monthsSelector;
 
     @FindBy (id ="years")
-    WebElement yearsSelector;
+    private WebElement yearsSelector;
 
     @FindBy (id ="address1")
-    WebElement addressSpace;
+    private WebElement addressSpace;
 
     @FindBy (id ="city")
-    WebElement citySpace;
+    private WebElement citySpace;
 
     @FindBy (id="id_state")
-    WebElement stateSelector;
+    private WebElement stateSelector;
 
     @FindBy (id ="postcode")
-    WebElement zipCodeSpace;
+    private WebElement zipCodeSpace;
 
     @FindBy (id="id_country")
-    WebElement countrySelector;
+    private WebElement countrySelector;
 
     @FindBy (id ="phone_mobile")
-    WebElement phoneNumberSpace;
+    private WebElement phoneNumberSpace;
 
     @FindBy (id ="submitAccount")
-    WebElement submitRegistrationButton;
+    private WebElement submitRegistrationButton;
 
     @FindBy(css = "#center_column > .alert li")
     private List<WebElement> alertMessagesRegistrationElement;

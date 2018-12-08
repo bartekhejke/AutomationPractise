@@ -16,7 +16,7 @@ public class LogInProfile extends Base {
     WebElement logOutButton;
 
     @Step
-    public void successfullyRegistered(){
+    public void successfullyRegisteredLogIn(){
         String logOutButtonText = logOutButton.getText();
 
         Assert.assertThat(logOutButtonText, IsEqual.equalTo("Sign out")); // hmcrest biblioteka (IsEqual)
